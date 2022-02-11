@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.label {
+  display: flex;
+  flex-flow: column;
+  justify-items: flex-start;
+}
+
+.filterWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.table {
+  margin-top: 15px;
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 3px 5px;
+}
