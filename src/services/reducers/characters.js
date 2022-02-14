@@ -24,7 +24,7 @@ export const charactersReducer = (state = initialState, action) => {
         ...state,
         getCharactersRequest: false,
         getCharactersSuccess: true,
-        info: action.info,
+        //info: action.info,
         list: action.list
       }
     }

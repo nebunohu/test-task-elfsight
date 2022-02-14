@@ -15,8 +15,8 @@ export const getCharactersRequest = () => {
 export const getCharactersSuccess = (data) => {
   return {
     type: GET_CHARACTERS_SUCCESS,
-    info: data.info,
-    list: data.results
+    //info: data.info,
+    list: data//.results
   };
 };
 
@@ -35,9 +35,9 @@ export const clearCharacters = () => {
 export const getCharactersThunk = () => async (dispatch) => {
   dispatch(getCharactersRequest());
   try{
-    const data = await getCharacters(`${API_BASE_URL}/character`)
-      .then(response => response.json())
-      .then(data => data);
+    const data = await getCharacters(`${API_BASE_URL}/character`, [])
+      //.then(response => response.json())
+      //.then(data => data);
     dispatch(getCharactersSuccess(data));
   } catch(error) {
     console.log(error);
