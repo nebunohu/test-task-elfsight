@@ -1,12 +1,15 @@
 .cardWrapper {
   display: flex;
   flex-flow: row nowrap;
-  max-width: 600px;
+  width: 600px;
+  height: 220px;
   box-sizing: border-box;
   border-radius: 15px;
-  background-color: rgb(32, 35, 41);
+  background-color: rgb(60, 62, 68);
   color: white;
   overflow: hidden;
+  margin: 0.75rem;
+  cursor: pointer;
 }
 
 .cardWrapper li {
@@ -16,4 +19,12 @@
 .characterName {
   font-size: 2em;
   font-weight: bold;
+}
+
+.characterStatus {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 7px;
 }

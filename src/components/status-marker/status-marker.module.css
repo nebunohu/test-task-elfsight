@@ -1,0 +1,18 @@
+.marker {
+  width: 9px;
+  height: 9px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: rgb(214, 61, 46);
+}
+
+.grey {
+  background-color: rgb(158, 158, 158);
+}
+
+.green {
+  background-color: rgb(85, 204, 68);
+}

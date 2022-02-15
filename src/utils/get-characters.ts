@@ -1,11 +1,7 @@
-import { authorizationToken } from "./authorization-header";
-import { getCharactersSuccess } from "../services/actions/characters-actions";
-
-export const getCharacters = async (url, list) => {
+export const getCharacters = async (url: string, list: any): Promise<any> => {
   const headers = {
     'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'Authorization': authorizationToken()
+    'Accept': 'application/json'
   };
   const res = await fetch(url, {method: 'GET', headers});
   const data = await res.json();

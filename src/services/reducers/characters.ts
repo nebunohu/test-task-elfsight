@@ -1,6 +1,16 @@
+import { TCharacter } from './../../types/character-type';
+import { TCharactersActions } from './../actions/characters-actions';
 import { CLEAR_CHARACTERS, GET_CHARACTERS_FAILED, GET_CHARACTERS_REQUEST, GET_CHARACTERS_SUCCESS } from "../actions/characters-actions";
 
-const initialState = {
+type TState = {
+  info: any;
+  list: Array<TCharacter>;
+  getCharactersRequest: boolean,
+  getCharactersSuccess: boolean,
+  getCharactersFailed: boolean,
+}
+
+const initialState:TState = {
   info: {},
   list: [],
 
@@ -9,7 +19,7 @@ const initialState = {
   getCharactersFailed: false,
 };
 
-export const charactersReducer = (state = initialState, action) => {
+export const charactersReducer = (state = initialState, action: TCharactersActions): TState => {
   switch(action.type) {
     case GET_CHARACTERS_REQUEST: {
       return {

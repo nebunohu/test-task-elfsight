@@ -2,7 +2,7 @@ import React from 'react';
 import thunk from 'redux-thunk'
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/app/app.jsx';
+import App from './components/app/app';
 import reportWebVitals from './reportWebVitals';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { applyMiddleware, createStore } from 'redux';

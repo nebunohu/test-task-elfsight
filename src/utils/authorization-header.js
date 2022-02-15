@@ -1,1 +1,0 @@
-export const authorizationToken = () => `Token ${localStorage.getItem('token')}`
