@@ -1,6 +1,7 @@
 import { FC, MouseEvent } from 'react';
 import { useDispatch } from '../../hooks';
 import { setIsModalOpened } from '../../services/actions/app-actions';
+import { setCurrentCharacter } from '../../services/actions/characters-actions';
 import StatusMarker from '../status-marker/status-marker';
 import styles from './character-card.module.css';
 
@@ -12,6 +13,7 @@ const CharacterCard: FC<TCharacterCardProps> = ({character}) => {
   const dispatch = useDispatch();
   const clickHandler = (event: MouseEvent<HTMLElement>) => {
     dispatch(setIsModalOpened());
+    dispatch(setCurrentCharacter(character));
   }
   return (
     <article className={`${styles.cardWrapper}`} onClick={clickHandler}>

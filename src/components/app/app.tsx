@@ -26,10 +26,9 @@ const App: FC = () => {
 
   return (
     <div className={`${styles.wrapper}`}>
-      {getCharactersRequest ? "Loading... " : <CharactersListContainer />}
-      {isModalOpened && <Modal closeModal={closeModal}>
-        <div></div>
-      </Modal> }
+      
+      <CharactersListContainer />
+      {isModalOpened && <Modal closeModal={closeModal} /> }
     </div>
   );
 }

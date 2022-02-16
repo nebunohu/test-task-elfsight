@@ -1,19 +1,20 @@
 import { TCharacter } from './../../types/character-type';
-import { TCharactersActions } from './../actions/characters-actions';
+import { TCharactersActions, SET_CURRENT_CHARACTER, CLEAR_CURRENT_CHARACTER } from './../actions/characters-actions';
 import { CLEAR_CHARACTERS, GET_CHARACTERS_FAILED, GET_CHARACTERS_REQUEST, GET_CHARACTERS_SUCCESS } from "../actions/characters-actions";
 
 type TState = {
   info: any;
   list: Array<TCharacter>;
-  getCharactersRequest: boolean,
-  getCharactersSuccess: boolean,
-  getCharactersFailed: boolean,
+  currentCharacter: TCharacter | null;
+  getCharactersRequest: boolean;
+  getCharactersSuccess: boolean;
+  getCharactersFailed: boolean;
 }
 
 const initialState:TState = {
   info: {},
   list: [],
-
+  currentCharacter: null,
   getCharactersRequest: false,
   getCharactersSuccess: false,
   getCharactersFailed: false,
@@ -46,6 +47,20 @@ export const charactersReducer = (state = initialState, action: TCharactersActio
       }
     }
     case CLEAR_CHARACTERS: {
+      return {
+        ...state,
+        list: [],
+        info: {}
+      }
+    }
+    case SET_CURRENT_CHARACTER: {
+      return {
+        ...state,
+        currentCharacter: action.character,
+      }
+    }
+
+    case CLEAR_CURRENT_CHARACTER: {
       return {
         ...state,
         list: [],

@@ -1,6 +1,23 @@
-.wrapper {
+.componentWrapper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.filterForm {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.filterFormInput {
+  width: 200px;
+  background-color: white;
+}
+
+.charactersListWrapper {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 }

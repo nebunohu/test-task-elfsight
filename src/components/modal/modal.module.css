@@ -1,0 +1,33 @@
+.wrapper {
+  position: relative;
+  width: 600px;
+  background-color: rgb(36, 40, 47);
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 25px;
+  z-index: 101;
+  color: white;
+}
+
+.closeIconRoot {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.closeIconColor {
+  color: white !important;
+}
+
+.modalCharacterName {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.characterStatus {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+}
