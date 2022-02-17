@@ -9,6 +9,7 @@ export const GET_CHARACTERS_FAILED: 'GET_CHARACTERS_FAILED' = 'GET_CHARACTERS_FA
 export const CLEAR_CHARACTERS: 'CLEAR_CHARACTERS' = 'CLEAR_CHARACTERS';
 export const SET_CURRENT_CHARACTER: 'SET_CURRENT_CHARACTER' = 'SET_CURRENT_CHARACTER';
 export const CLEAR_CURRENT_CHARACTER: 'CLEAR_CURRENT_CHARACTER' = 'CLEAR_CURRENT_CHARACTER';
+export const SET_FILTERED_CHARACTERS_LIST: 'SET_FILTERED_CHARACTERS_LIST' = 'SET_FILTERED_CHARACTERS_LIST';
 
 export type TGetCCharactersRequest ={
   readonly type: typeof GET_CHARACTERS_REQUEST;
@@ -16,7 +17,7 @@ export type TGetCCharactersRequest ={
 
 export type TGetCCharactersSuccess ={
   readonly type: typeof GET_CHARACTERS_SUCCESS;
-  readonly list: any;
+  readonly list: Array<TCharacter>;
 }
 
 export type TGetCCharactersFailed ={
@@ -36,7 +37,12 @@ export type TClearCurrentrCharacter ={
   readonly type: typeof CLEAR_CURRENT_CHARACTER;
 }
 
-export type TCharactersActions = TGetCCharactersRequest | TGetCCharactersSuccess | TGetCCharactersFailed | TClearCharacters | TSetCurrentrCharacter | TClearCurrentrCharacter;
+export type TSetFilteredCharactersList ={
+  readonly type: typeof SET_FILTERED_CHARACTERS_LIST;
+  readonly filteredList: Array<TCharacter>;
+}
+
+export type TCharactersActions = TGetCCharactersRequest | TGetCCharactersSuccess | TGetCCharactersFailed | TClearCharacters | TSetCurrentrCharacter | TClearCurrentrCharacter | TSetFilteredCharactersList;
 
 export const getCharactersRequest = (): TCharactersActions => {
   return {
@@ -44,11 +50,10 @@ export const getCharactersRequest = (): TCharactersActions => {
   };
 };
 
-export const getCharactersSuccess = (data: any): TCharactersActions => {
+export const getCharactersSuccess = (list: Array<TCharacter>): TCharactersActions => {
   return {
     type: GET_CHARACTERS_SUCCESS,
-    //info: data.info,
-    list: data//.results
+    list
   };
 };
 
@@ -74,6 +79,13 @@ export const setCurrentCharacter = (character: TCharacter): TCharactersActions =
 export const clearCurrentCharacter = (): TCharactersActions => {
   return {
     type: CLEAR_CURRENT_CHARACTER,
+  }
+}
+
+export const setFilteredCharactersList = (filteredList: Array<TCharacter>): TCharactersActions => {
+  return {
+    type: SET_FILTERED_CHARACTERS_LIST,
+    filteredList,
   }
 }
 
